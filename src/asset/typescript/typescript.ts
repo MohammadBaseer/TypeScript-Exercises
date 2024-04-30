@@ -23,15 +23,15 @@ isTrue = true;
 // isTrue = {name:"asdasd"}
 
 function sum() {
-    let a = 2;
-    const b = 5;
-  
-    let result = a + b;
-  }
+  let a = 2;
+  const b = 5;
 
-  function sum2(paramA: number, paramB: number) {
-    var result = paramA * paramB;
-  }
+  let result = a + b;
+}
+
+function sum2(paramA: number, paramB: number) {
+  var result = paramA * paramB;
+}
 
 //? ============================= UNION
 // Union types are used when a value can be more than a single type.
@@ -52,32 +52,43 @@ let webMentor: "Emily" | "Raul";
 // Interfaces are similar to type aliases, except they only apply to object types.
 // =============================
 interface WebStudent1 {
-    name: "Baseer" | "Rahimi",
-    course: "Web" | "DataSceince",
-    duration: number,
-    time: number
+  name: "Baseer" | "Rahimi";
+  course: "Web" | "DataSceince";
+  duration: number;
+  time?: number; // optional property
 }
 
-const SectionA : WebStudent1 ={
-    name: "Baseer",
-    time: 555,
-    course: "DataSceince",
-    duration: 5
-}
+const SectionA: WebStudent1 = {
+  name: "Baseer",
+  time: 555,
+  course: "DataSceince",
+  duration: 5,
+};
 // console.log(SectionA);
 
 // Extending an interface means you are creating a new interface with the same properties as the original, plus something new.
 interface WebStudent2 extends WebStudent1 {
-    hasLaptop: boolean,
-    addres : number | string
+  hasLaptop: boolean;
+  addres: number | string;
 }
 
-const SectionB : WebStudent2 ={
-    name: "Rahimi",
-    time: 555,
-    course: "DataSceince",
-    duration: 5,
-    addres: "Berlin "+ 123,
-    hasLaptop: false
-}
-console.log(SectionB);
+const SectionB: WebStudent2 = {
+  name: "Rahimi",
+  course: "DataSceince",
+  duration: 5,
+  addres: "Berlin " + 123,
+  hasLaptop: false,
+};
+// console.log(SectionB);
+
+//* ============================= Index Signature
+
+type Models = {
+  [key: string]: number | string;
+};
+
+const car: Models = {
+  car1: "BMW",
+  car2: 123,
+};
+// console.log(car);
