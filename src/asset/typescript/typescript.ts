@@ -80,4 +80,4 @@ const SectionB : WebStudent2 ={
     addres: "Berlin "+ 123,
     hasLaptop: false
 }
-// console.log(SectionB);
+console.log(SectionB);
